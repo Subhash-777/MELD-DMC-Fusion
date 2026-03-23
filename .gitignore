@@ -1,0 +1,14 @@
+mlruns/
+data/
+datasets/
+*.pt
+*.pth
+*.pkl
+*.h5
+*.ckpt
+*.zip
+*.tar
+*.csv
+__pycache__/
+*.log
+.env
