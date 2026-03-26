@@ -77,7 +77,7 @@ def calibrate_biases(val_probs, val_labels, n_classes=7):
                 wf1      = f1_score(val_labels, preds,
                                     average="weighted", zero_division=0)
                 if wf1 > best_wf1 + 1e-6:
-                    best_wf1 = wf1k
+                    best_wf1 = wf1
                     best_b   = b
                     improved = True
             biases[c] = best_b
