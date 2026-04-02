@@ -28,7 +28,6 @@ def extract_audio_from_video(video_path, sr=16000):
         # ── Truncate long clips to prevent OOM ───────────────────────────
         if waveform.shape[0] > MAX_AUDIO_SAMPLES:
             waveform = waveform[:MAX_AUDIO_SAMPLES]
-
         return waveform
     except Exception:
         return None
@@ -81,9 +80,13 @@ def extract_audio_features(split="train"):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Extracting WavLM-base-plus audio features [{split}] on {device}")
 
-    feature_extractor = AutoFeatureExtractor.from_pretrained(cfg.WAV2VEC_MODEL)
-    model             = WavLMModel.from_pretrained(cfg.WAV2VEC_MODEL).to(device).eval()
 
+    # ----------------------------------------------------------------------------------------
+    feature_extractor = AutoFeatureExtractor.from_pretrained(cfg.WAV)
+    model             = WavLMModel.from_pretrained(cfg.WAV).to(device).eval()
+    # ----------------------------------------------------------------------------------------
+
+    
     csv_map = {"train": "train_sent_emo.csv",
                "dev":   "dev_sent_emo.csv",
                "test":  "test_sent_emo.csv"}

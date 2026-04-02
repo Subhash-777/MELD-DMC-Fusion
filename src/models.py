@@ -88,7 +88,7 @@ class DMCFusion(nn.Module):
     def _encode_text(self, input_ids, attention_mask):
         """
         Chunk-based roberta-base forward.
-        input_ids: [B, L, S=128] — includes 3-turn context pairs
+        input_ids: [B, L, S=128] — includes 5-turn context pairs
         Returns:   [B, L, 768]
         """
         B, L, S = input_ids.shape

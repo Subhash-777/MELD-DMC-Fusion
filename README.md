@@ -124,7 +124,7 @@ dmc_fusion/
 ### 3. EfficientNet-B4 (Visual)
 - **What it is:** A CNN image classifier, pretrained on ImageNet
 - **Why used:** Extracts facial expression features from video frames per utterance
-- **Output:** 768-dim projection (`vis_proj_dim = 768`) matching text/audio hidden size
+- **Output:** 7681-dim projection (`vis_proj_dim = 768`) matching text/audio hidden size
 - **Key config:** `vis_backbone = efficientnet_b4`
 
 ---

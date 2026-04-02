@@ -14,7 +14,7 @@ class Config:
     HIDDEN_DIM     = 768
     VIS_FEAT_DIM   = 768
 
-    WAV2VEC_MODEL  = "microsoft/wavlm-base-plus"
+    WAV  = "microsoft/wavlm-base-plus"
     VIS_BACKBONE   = "efficientnet_b4"
     VIS_PROJ_DIM   = 768
 
